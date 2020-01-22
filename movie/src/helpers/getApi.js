@@ -14,7 +14,6 @@ export const getApi = async (movie, setMovie, mount) => {
         },
       });
       await setMovie(response.data);
-      console.log(movie);
     } catch (error) {
       if (error) setMovie('Please try again later');
     }
