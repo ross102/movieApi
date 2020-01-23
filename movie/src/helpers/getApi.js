@@ -13,7 +13,7 @@ export const getApi = async (movie, setMovie, mount) => {
           api_key: '712ad7462949bf536a1eea5dd0a07c0f',
         },
       });
-      await setMovie(response.data);
+      await setMovie(response.data.production_companies);
     } catch (error) {
       if (error) setMovie('Please try again later');
     }

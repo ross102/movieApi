@@ -10,12 +10,23 @@ const Movies = () => {
 
   useEffect(() => {
     getApi(movieData, setMovieData, isMounted);
-    console.log(movieData);
   }, []);
 
+  console.log(movieData);
+  console.log('****');
   return (
     <>
+      <Text
+        style={{
+          fontSize: 20,
+          alignSelf: 'center',
+          margin: 10,
+          color: 'black',
+        }}>
+        Movie Production Companies
+      </Text>
       <FlatList
+        style={{textAlign: 'center'}}
         keyExtractor={item => item.id.toString()}
         data={movieData}
         renderItem={({item}) => (

@@ -23,15 +23,21 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+
 import Movies from './src/screens/Movies';
 
-const App = () => {
-  return (
-    <>
-      <Movies />
-    </>
-  );
-};
+const MainNavigator = createStackNavigator(
+  {
+    Companies: {screen: Movies},
+  },
+  {
+    initialRouteName: 'Companies',
+  },
+);
+
+const App = createAppContainer(MainNavigator);
 
 const styles = StyleSheet.create({
   scrollView: {
